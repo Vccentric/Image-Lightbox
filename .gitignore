@@ -1,0 +1,8 @@
+# Ignore folders
+node_modules/
+dist/
+
+# Ignore files
+.babelrc
+.eslintrc.json
+webpack.config.js

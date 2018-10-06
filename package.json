@@ -1,0 +1,48 @@
+{
+  "name": "image-lightbox",
+  "version": "1.0.0",
+  "description": "This is a basic image lightbox plugin built with React.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devstart": "webpack-dev-server --mode development",
+    "build": "webpack --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vccentric/Image-Lightbox.git"
+  },
+  "keywords": [
+    "React",
+    "Image",
+    "Lightbox"
+  ],
+  "author": "Christopher Viray",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vccentric/Image-Lightbox/issues"
+  },
+  "homepage": "https://github.com/Vccentric/Image-Lightbox#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-hot-loader": "^4.3.11"
+  }
+}
