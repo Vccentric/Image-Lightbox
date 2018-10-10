@@ -1,5 +1,7 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
+import Row from './Row';
+import Column from './Column';
 
 // list of sample images
 const data = [
@@ -10,7 +12,7 @@ const data = [
 const maxCols = 5;
 
 // images grid component
-class ImagesGrid extends React.Component {
+class ImageGrid extends React.Component {
     constructor(props) {
         super(props);
         this.clickImage = this.clickImage.bind(this);
@@ -50,20 +52,4 @@ class ImagesGrid extends React.Component {
     }
 }
 
-// row component
-function Row(props) {
-    const { cols } = props;
-    return <div className="row">{cols}</div>;
-}
-
-// column component
-function Column(props) {
-    const { src, alt } = props;
-    return (
-        <div className="column">
-            <img className="thumbnail" src={`./images/${src}`} alt={alt} />
-        </div>
-    );
-}
-
-export default hot(module)(ImagesGrid);
+export default hot(module)(ImageGrid);

@@ -1,12 +1,12 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
-import ImagesGrid from './image-lightbox';
+import ImageGrid from './ImageGrid';
 
 function App(props) {
     return (
         <div className="App">
             <h1>Image Lightbox!!!</h1>
-            <ImagesGrid />
+            <ImageGrid />
         </div>
     );
 }
