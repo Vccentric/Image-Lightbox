@@ -15,12 +15,12 @@ const maxCols = 5;
 class ImageGrid extends React.Component {
     constructor(props) {
         super(props);
-        this.clickImage = this.clickImage.bind(this);
+        this.clickThumbnail = this.clickThumbnail.bind(this);
     }
 
     // function to handle the click action on an image
-    clickImage(event) {
-        console.log(this);
+    clickThumbnail(event) {
+        console.log('test');
         // TODO
     }
 
@@ -38,7 +38,7 @@ class ImageGrid extends React.Component {
                     break;
                 }
                 const { src, alt } = data[index];
-                cols.push(<Column key={index} src={src} alt={alt} />);
+                cols.push(<Column key={index} src={src} alt={alt} handleClickThumbnail={this.clickThumbnail} />);
             }
             rows.push(<Row key={i} cols={cols} />);
             cols = []; // reset
