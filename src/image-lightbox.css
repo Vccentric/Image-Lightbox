@@ -1,0 +1,44 @@
+/**
+ * Image Lightbox v1.0.0
+ * CSS file for Image Lightbox
+ *
+ * @author      Christopher Viray
+ * @copyright   (c) 2018 Christopher Viray
+ * @license     MIT
+ * @version     1.0.0
+ */
+
+h1 {
+    text-align: center;
+}
+
+#grid {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.column {
+    width: 20%;
+    min-width: 100px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    text-align: center;
+    align-self: center;
+}
+
+img.thumbnail {
+    max-width: 100%;
+    cursor: pointer;
+}
+
+img.thumbnail:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
