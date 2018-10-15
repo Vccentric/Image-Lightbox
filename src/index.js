@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import ImageLightboxContainer from './ImageLightboxContainer';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<ImageLightboxContainer />, document.getElementById('root'));

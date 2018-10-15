@@ -20,8 +20,8 @@ class ImageGrid extends React.Component {
 
     // function to handle the click action on an image
     clickThumbnail(event) {
-        console.log('test');
-        // TODO
+        const { handleClickThumbnail } = this.props;
+        handleClickThumbnail(event);
     }
 
     render() {
