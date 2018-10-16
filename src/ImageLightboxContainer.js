@@ -15,27 +15,19 @@ class ImageLightboxContainer extends React.Component {
     constructor(props) {
         super(props);
         this.clickThumbnail = this.clickThumbnail.bind(this);
-        this.clickLightboxImage = this.clickLightboxImage.bind(this);
         this.closeLightbox = this.closeLightbox.bind(this);
+        this.changeSelectedImage = this.changeSelectedImage.bind(this);
         this.state = {
             lightboxOpen: false,
             images: data,
-            currentImage: {},
+            selectedImage: null,
         };
     }
 
     // function to handle clicking on thumbnail
     clickThumbnail(event) {
         const index = parseInt(event.currentTarget.getAttribute('data-id'), 10);
-        const { images } = this.state;
-        const image = images[index];
-        this.setState({ lightboxOpen: true, currentImage: image });
-    }
-
-    // function to handle clicking on full image inside the lightbox
-    clickLightboxImage(event) {
-        console.log('click lightbox image');
-        // TODO
+        this.setState({ lightboxOpen: true, selectedImage: index });
     }
 
     // function to handle the closing of the lightbox
@@ -43,8 +35,13 @@ class ImageLightboxContainer extends React.Component {
         this.setState({ lightboxOpen: false });
     }
 
+    // function to handle of changing of the selected image
+    changeSelectedImage(index) {
+        this.setState({ selectedImage: index });
+    }
+
     render() {
-        const { lightboxOpen, currentImage, images } = this.state;
+        const { lightboxOpen, selectedImage, images } = this.state;
         return (
             <div id="image-lightbox-container">
                 <h1>Image Lightbox!!!</h1>
@@ -53,10 +50,11 @@ class ImageLightboxContainer extends React.Component {
                     handleClickThumbnail={this.clickThumbnail}
                 />
                 <Lightbox
-                    image={currentImage}
+                    images={images}
+                    selectedImage={selectedImage}
                     lightboxOpen={lightboxOpen}
-                    handleClickLightboxImage={this.clickLightboxImage}
                     handleCloseLightbox={this.closeLightbox}
+                    handleChangeSelectedImage={this.changeSelectedImage}
                 />
             </div>
         );
