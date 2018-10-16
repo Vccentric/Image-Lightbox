@@ -5,7 +5,16 @@ class Lightbox extends React.Component {
     constructor(props) {
         super(props);
         this.clickImage = this.clickImage.bind(this);
-        this.close = this.close.bind(this);
+        this.clickClose = this.clickClose.bind(this);
+        this.keyDownClose = this.keyDownClose.bind(this);
+    }
+
+    componentDidMount() {
+        document.getElementById("lightbox").focus();
+    }
+
+    componentDidUpdate() {
+        document.getElementById("lightbox").focus();
     }
 
     // function to handle clicking full image
@@ -14,10 +23,18 @@ class Lightbox extends React.Component {
         handleClickLightboxImage(event);
     }
 
-    // function to handle close
-    close(event) {
+    // function to handle clicking of close
+    clickClose(event) {
         const { handleCloseLightbox } = this.props;
         handleCloseLightbox(event);
+    }
+
+    // function to handle keypress of 'ESC' to close
+    keyDownClose(event) {
+        if (event.key === 'Escape') {
+            const { handleCloseLightbox } = this.props;
+            handleCloseLightbox(event);
+        }
     }
 
     render() {
@@ -27,8 +44,8 @@ class Lightbox extends React.Component {
         return (
             <div>
                 <div id="lightboxOverlay" className={classNames} />
-                <div id="lightbox" className={classNames}>
-                    <div id="close" onClick={this.close}>X</div>
+                <div id="lightbox" className={classNames} onKeyDown={this.keyDownClose} tabIndex="0">
+                    <div id="close" onClick={this.clickClose}>X</div>
                     <div id="imageContainer">
                         <img id="fullImage" src={src} alt={alt} />
                         <div id="caption">{alt}</div>
