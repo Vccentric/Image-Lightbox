@@ -3,12 +3,7 @@ import { hot } from 'react-hot-loader';
 import Row from './Row';
 import Column from './Column';
 
-// list of sample images
-const data = [
-    { src: "img_mountains_wide.jpg", alt: 'img-1' },
-    { src: "img_nature_wide.jpg", alt: 'img-2' },
-    { src: "img_snow_wide.jpg", alt: 'img-3' },
-];
+// global variables
 const maxCols = 5;
 
 // images grid component
@@ -25,7 +20,8 @@ class ImageGrid extends React.Component {
     }
 
     render() {
-        const total = data.length;
+        const { images } = this.props;
+        const total = images.length;
         const maxRows = ((total % maxCols) === 0) ? parseInt(total / maxCols, 0) : parseInt(total / maxCols, 0) + 1;
 
         // setup grid thumbnails
@@ -34,11 +30,11 @@ class ImageGrid extends React.Component {
         for (let i = 0; i < maxRows; i++) { // rows
             for (let j = 0; j < maxCols; j++) { // columns
                 const index = (i * maxCols) + j;
-                if (data[index] === undefined) { // defensive check
+                if (images[index] === undefined) { // defensive check
                     break;
                 }
-                const { src, alt } = data[index];
-                cols.push(<Column key={index} src={src} alt={alt} handleClickThumbnail={this.clickThumbnail} />);
+                const { src, alt } = images[index];
+                cols.push(<Column key={index} src={src} alt={alt} handleClickThumbnail={this.clickThumbnail} index={index} />);
             }
             rows.push(<Row key={i} cols={cols} />);
             cols = []; // reset

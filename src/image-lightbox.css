@@ -68,7 +68,6 @@ img.thumbnail:hover {
     right: 0;
     bottom: 0;
     z-index: 1010;
-    cursor: pointer;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -76,7 +75,7 @@ img.thumbnail:hover {
 }
 
 #lightbox.show {
-    display: block;
+    display: flex;
 }
 
 #close {

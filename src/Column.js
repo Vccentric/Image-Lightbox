@@ -15,10 +15,10 @@ class Column extends React.Component {
     }
 
     render() {
-        const { src, alt } = this.props;
+        const { src, alt, index } = this.props;
         return (
             <div className="column">
-                <img className="thumbnail" src={`./images/${src}`} alt={alt} onClick={this.clickThumbnail} />
+                <img className="thumbnail" src={src} alt={alt} onClick={this.clickThumbnail} data-id={index} />
             </div>
         );
     }

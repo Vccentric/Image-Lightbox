@@ -21,9 +21,8 @@ class Lightbox extends React.Component {
     }
 
     render() {
-        const {
-            src, alt, caption, lightboxOpen,
-        } = this.props;
+        const { lightboxOpen, image } = this.props;
+        const { src, alt } = image;
         const classNames = lightboxOpen ? 'show' : '';
         return (
             <div>
@@ -32,7 +31,7 @@ class Lightbox extends React.Component {
                     <div id="close" onClick={this.close}>X</div>
                     <div id="imageContainer">
                         <img id="fullImage" src={src} alt={alt} />
-                        <div id="caption">{caption}</div>
+                        <div id="caption">{alt}</div>
                     </div>
                 </div>
             </div>
