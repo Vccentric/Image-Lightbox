@@ -121,6 +121,7 @@ img.thumbnail:hover {
 
 #fullImage {
     border: 4px solid white;
+    cursor: pointer;
 }
 
 #caption {

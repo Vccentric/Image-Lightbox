@@ -70,7 +70,7 @@ class Lightbox extends React.Component {
                     <div id="controlsContainer">
                         <div id="prev" onClick={this.clickPrev}>&lt;&lt;</div>
                         <div id="imageContainer">
-                            <img id="fullImage" src={src} alt={alt} />
+                            <img id="fullImage" src={src} alt={alt} onClick={this.clickClose} />
                             <div id="caption">{alt}</div>
                         </div>
                         <div id="next" onClick={this.clickNext}>&gt;&gt;</div>
