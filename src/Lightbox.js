@@ -6,6 +6,8 @@ class Lightbox extends React.Component {
         super(props);
         this.clickClose = this.clickClose.bind(this);
         this.handleKeyDown = this.handleKeyDown.bind(this);
+        this.clickPrev = this.clickPrev.bind(this);
+        this.clickNext = this.clickNext.bind(this);
     }
 
     componentDidMount() {
@@ -24,26 +26,35 @@ class Lightbox extends React.Component {
 
     // function to handle keypress of 'ESC' to close
     handleKeyDown(event) {
-        const {
-            handleCloseLightbox, handleChangeSelectedImage, selectedImage, images,
-        } = this.props;
-        let index = 0;
-        const max = images.length - 1;
+        const { handleCloseLightbox } = this.props;
         switch (event.key) {
             case 'Escape':
                 handleCloseLightbox(event);
                 break;
             case "ArrowLeft":
-                index = (selectedImage === undefined || ((selectedImage - 1) < 0)) ? 0 : (selectedImage - 1);
-                handleChangeSelectedImage(index);
+                this.clickPrev();
                 break;
             case 'ArrowRight':
-                index = (selectedImage === undefined || ((selectedImage + 1) >= max)) ? max : (selectedImage + 1);
-                handleChangeSelectedImage(index);
+                this.clickNext();
                 break;
             default:
                 break;
         }
+    }
+
+    // function to handle clicking prev arrow
+    clickPrev() {
+        const { handleChangeSelectedImage, selectedImage } = this.props;
+        const index = (selectedImage === undefined || ((selectedImage - 1) < 0)) ? 0 : (selectedImage - 1);
+        handleChangeSelectedImage(index);
+    }
+
+    // function to handle clicking next arrow
+    clickNext() {
+        const { handleChangeSelectedImage, selectedImage, images } = this.props;
+        const max = images.length - 1;
+        const index = (selectedImage === undefined || ((selectedImage + 1) >= max)) ? max : (selectedImage + 1);
+        handleChangeSelectedImage(index);
     }
 
     render() {
@@ -57,12 +68,12 @@ class Lightbox extends React.Component {
                 <div id="lightbox" className={classNames} onKeyDown={this.handleKeyDown} tabIndex="0">
                     <div id="close" onClick={this.clickClose}>X</div>
                     <div id="controlsContainer">
-                        <div id="prev">&lt;&lt;</div>
+                        <div id="prev" onClick={this.clickPrev}>&lt;&lt;</div>
                         <div id="imageContainer">
                             <img id="fullImage" src={src} alt={alt} />
                             <div id="caption">{alt}</div>
                         </div>
-                        <div id="next">&gt;&gt;</div>
+                        <div id="next" onClick={this.clickNext}>&gt;&gt;</div>
                     </div>
                 </div>
             </div>
