@@ -94,6 +94,27 @@ img.thumbnail:hover {
     color: lightgray;
 }
 
+#controlsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#prev, #next {
+    margin: 10px;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1010;
+}
+
+#prev:hover, #next:hover {
+    color: lightgray;
+}
+
 #imageContainer {
     margin: auto;
 }

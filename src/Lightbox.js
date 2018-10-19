@@ -56,9 +56,13 @@ class Lightbox extends React.Component {
                 <div id="lightboxOverlay" className={classNames} />
                 <div id="lightbox" className={classNames} onKeyDown={this.handleKeyDown} tabIndex="0">
                     <div id="close" onClick={this.clickClose}>X</div>
-                    <div id="imageContainer">
-                        <img id="fullImage" src={src} alt={alt} />
-                        <div id="caption">{alt}</div>
+                    <div id="controlsContainer">
+                        <div id="prev">&lt;&lt;</div>
+                        <div id="imageContainer">
+                            <img id="fullImage" src={src} alt={alt} />
+                            <div id="caption">{alt}</div>
+                        </div>
+                        <div id="next">&gt;&gt;</div>
                     </div>
                 </div>
             </div>
