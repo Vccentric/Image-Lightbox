@@ -5,7 +5,7 @@ import Lightbox from './Lightbox';
 import './image-lightbox.css';
 
 // global variables
-const data = [ // sample data
+const localImages = [ // local sample images
     { src: "./images/img_mountains_wide.jpg", alt: 'img-1' },
     { src: "./images/img_nature_wide.jpg", alt: 'img-2' },
     { src: "./images/img_snow_wide.jpg", alt: 'img-3' },
@@ -28,30 +28,37 @@ class ImageLightboxContainer extends React.Component {
     }
 
     componentDidMount() {
-        this.getData(); // get Flickr data
+        // check which type of images to get
+        const { options } = this.props;
+        this.getData(options); // get images
     }
 
     // function to make ajax call to get data from url (Flickr feed)
-    getData() {
-        // set url to get public Flickr feed
-        const url = 'https://cors-anywhere.herokuapp.com/https://api.flickr.com/services/feeds/photos_public.gne?tags=puppies&format=json&nojsoncallback=true';
-        const images = [];
-        fetch(url)
-            .then(response => response.json()) // convert response into json
-            .then((jsonData) => {
-                const items = (jsonData && jsonData.items) ? jsonData.items : [];
-                const title = (jsonData && jsonData.title) ? `Flickr Public Feed: ${jsonData.title}` : 'Flickr Public Feed: ';
-                for (let i = 0; i < items.length; i++) { // convert json into an appropriate 'key/value' object array
-                    const src = items[i].media.m;
-                    const alt = items[i].title;
-                    images.push({ src, alt });
-                }
-                this.setState({ images, title, firstLoad: false });
-            })
-            .catch((error) => {
-                console.log('Error has occurred:');
-                console.log(error);
-            });
+    getData(options) {
+        // check options
+        if (options === 'flickr') {
+            // set url to get public Flickr feed
+            const url = 'https://cors-anywhere.herokuapp.com/https://api.flickr.com/services/feeds/photos_public.gne?tags=puppies&format=json&nojsoncallback=true';
+            const images = [];
+            fetch(url)
+                .then(response => response.json()) // convert response into json
+                .then((jsonData) => {
+                    const items = (jsonData && jsonData.items) ? jsonData.items : [];
+                    const title = (jsonData && jsonData.title) ? `Flickr Public Feed: ${jsonData.title}` : 'Flickr Public Feed: ';
+                    for (let i = 0; i < items.length; i++) { // convert json into an appropriate 'key/value' object array
+                        const src = items[i].media.m;
+                        const alt = items[i].title;
+                        images.push({ src, alt });
+                    }
+                    this.setState({ images, title, firstLoad: false });
+                })
+                .catch((error) => {
+                    console.log('Error has occurred:');
+                    console.log(error);
+                });
+        } else { // default - use local images
+            this.setState({ images: localImages, firstLoad: false });
+        }
     }
 
     // function to handle clicking on thumbnail
