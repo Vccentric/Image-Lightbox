@@ -131,3 +131,13 @@ img.thumbnail:hover {
     line-height: 20px;
     text-align: center;
 }
+
+#loadingSpinner {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-image: url('../public/images/loading-spinner.gif');
+}
