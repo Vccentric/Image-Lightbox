@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "fce78aca2180acf23243";
+/******/ 	var hotCurrentHash = "6169aa53e1cca5d69087";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1135,9 +1135,9 @@ eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\
   !*** ./public/images/img_mountains_wide.jpg ***!
   \**********************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-eval("module.exports = __webpack_require__.p + \"f7f3ce3fd039702a3b46fcbcff155466.jpg\";\n\n//# sourceURL=webpack:///./public/images/img_mountains_wide.jpg?");
+eval("module.exports = \"./f7f3ce3fd039702a3b46fcbcff155466.jpg\";\n\n//# sourceURL=webpack:///./public/images/img_mountains_wide.jpg?");
 
 /***/ }),
 
@@ -1146,9 +1146,9 @@ eval("module.exports = __webpack_require__.p + \"f7f3ce3fd039702a3b46fcbcff15546
   !*** ./public/images/img_nature_wide.jpg ***!
   \*******************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-eval("module.exports = __webpack_require__.p + \"d73dd0b67391a113150eb5661f8ff00d.jpg\";\n\n//# sourceURL=webpack:///./public/images/img_nature_wide.jpg?");
+eval("module.exports = \"./d73dd0b67391a113150eb5661f8ff00d.jpg\";\n\n//# sourceURL=webpack:///./public/images/img_nature_wide.jpg?");
 
 /***/ }),
 
@@ -1157,9 +1157,9 @@ eval("module.exports = __webpack_require__.p + \"d73dd0b67391a113150eb5661f8ff00
   !*** ./public/images/img_snow_wide.jpg ***!
   \*****************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-eval("module.exports = __webpack_require__.p + \"4b41c85111a23b462d2e207dfb8bd9ff.jpg\";\n\n//# sourceURL=webpack:///./public/images/img_snow_wide.jpg?");
+eval("module.exports = \"./4b41c85111a23b462d2e207dfb8bd9ff.jpg\";\n\n//# sourceURL=webpack:///./public/images/img_snow_wide.jpg?");
 
 /***/ }),
 
@@ -1168,9 +1168,9 @@ eval("module.exports = __webpack_require__.p + \"4b41c85111a23b462d2e207dfb8bd9f
   !*** ./public/images/loading-spinner.gif ***!
   \*******************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-eval("module.exports = __webpack_require__.p + \"078aa3f09332c2484dbfd7239ef39e2d.gif\";\n\n//# sourceURL=webpack:///./public/images/loading-spinner.gif?");
+eval("module.exports = \"./078aa3f09332c2484dbfd7239ef39e2d.gif\";\n\n//# sourceURL=webpack:///./public/images/loading-spinner.gif?");
 
 /***/ }),
 
