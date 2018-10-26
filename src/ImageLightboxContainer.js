@@ -3,12 +3,15 @@ import { hot } from 'react-hot-loader';
 import ImageGrid from './ImageGrid';
 import Lightbox from './Lightbox';
 import './image-lightbox.css';
+import img1 from "../public/images/img_mountains_wide.jpg";
+import img2 from "../public/images/img_nature_wide.jpg";
+import img3 from "../public/images/img_snow_wide.jpg";
 
 // global variables
 const localImages = [ // local sample images
-    { src: "./images/img_mountains_wide.jpg", alt: 'img-1' },
-    { src: "./images/img_nature_wide.jpg", alt: 'img-2' },
-    { src: "./images/img_snow_wide.jpg", alt: 'img-3' },
+    { src: img1, alt: 'img-1' },
+    { src: img2, alt: 'img-2' },
+    { src: img3, alt: 'img-3' },
 ];
 
 class ImageLightboxContainer extends React.Component {
