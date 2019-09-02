@@ -1,0 +1,43 @@
+{
+    "extends": "airbnb",
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "no-console": "off",
+        "indent": "off",
+        "max-len": "off",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "no-unused-vars": "off",
+        "react/jsx-indent": [
+            "error",
+            4
+        ],
+        "quotes": "off",
+        "no-plusplus": "off",
+        "react/prop-types": 0,
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/no-noninteractive-element-interactions": "off",
+        "class-methods-use-this": "off",
+        "jsx-a11y/interactive-supports-focus": "off",
+        "jsx-a11y/no-static-element-interactions": "off",
+        "react/jsx-indent-props": "off",
+        "jsx-a11y/no-noninteractive-tabindex": "off"
+    },
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "globals": {
+        "document": false
+    },
+    "parser": "babel-eslint"
+}
