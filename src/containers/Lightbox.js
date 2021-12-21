@@ -1,16 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Lightbox = ({ isOpen = false, images = [], currentIndex = 0 }) => {
-  const toggleOpen = isOpen ? "" : "close";
+const Lightbox = ({ images = [], lightboxState, setLightboxState }) => {
+  const { toggleOpen, currentIndex } = lightboxState;
+  const toggleClass = toggleOpen ? "" : "close";
   const currentImage = (Array.isArray(images) && images[currentIndex]) || {};
   return (
-    <div id="lightbox" className={toggleOpen}>
+    <div id="lightbox" className={toggleClass}>
       <div id="overlay"></div>
       <div id="modal">
-        <button id="close">Close</button>
+        <button
+          id="close"
+          onClick={() => close(lightboxState, setLightboxState)}
+        >
+          Close
+        </button>
         <div id="controls-container">
-          <button id="prev">&lt;&lt;</button>
+          <button
+            id="prev"
+            onClick={() => prev(lightboxState, setLightboxState)}
+          >
+            &lt;&lt;
+          </button>
           <div id="image-container">
             <img
               className="full-image"
@@ -19,17 +30,49 @@ const Lightbox = ({ isOpen = false, images = [], currentIndex = 0 }) => {
             />
             <span id="caption">{currentImage.alt}</span>
           </div>
-          <button id="next">&gt;&gt;</button>
+          <button
+            id="next"
+            onClick={() =>
+              next(images.length - 1, lightboxState, setLightboxState)
+            }
+          >
+            &gt;&gt;
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
+export const close = (lightboxState, setLightboxState) => {
+  setLightboxState({
+    ...lightboxState,
+    toggleOpen: false,
+  });
+};
+
+export const prev = (lightboxState, setLightboxState) => {
+  const { currentIndex } = lightboxState;
+  const index = currentIndex - 1 <= 0 ? 0 : currentIndex - 1;
+  setLightboxState({
+    ...lightboxState,
+    currentIndex: index,
+  });
+};
+
+export const next = (max, lightboxState, setLightboxState) => {
+  const { currentIndex } = lightboxState;
+  const index = currentIndex + 1 >= max ? max : currentIndex + 1;
+  setLightboxState({
+    ...lightboxState,
+    currentIndex: index,
+  });
+};
+
 Lightbox.propTypes = {
-  isOpen: PropTypes.bool,
   images: PropTypes.array,
-  currentIndex: PropTypes.number,
+  lightboxState: PropTypes.object,
+  setLightboxState: PropTypes.func,
 };
 
 export default Lightbox;
