@@ -1,12 +1,18 @@
 {
   "name": "image-lightbox",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "This is a basic image lightbox plugin built with React.js",
   "main": "index.js",
+  "private": false,
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "devstart": "webpack-dev-server --mode development",
-    "build": "webpack --mode development"
+    "test": "jest --config jest.config.js --coverage",
+    "build": "webpack",
+    "lint": "eslint --ext .js --ext .jsx ./src",
+    "update-snapshots": "jest --config jest.config.js --updateSnapshot",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -23,28 +29,33 @@
     "url": "https://github.com/Vccentric/Image-Lightbox/issues"
   },
   "homepage": "https://github.com/Vccentric/Image-Lightbox#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "@babel/preset-react": "^7.9.1",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
-    "css-loader": "^3.4.2",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^17.1.1",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.19.0",
-    "file-loader": "^6.0.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
-  },
   "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-hot-loader": "^4.12.20"
+    "normalize.css": "^8.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "babel-jest": "^27.3.1",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "eslint-plugin-react": "^7.27.0",
+    "file-loader": "^6.2.0",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "react-test-renderer": "^17.0.2",
+    "sass": "^1.43.4",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.64.1",
+    "webpack-cli": "^4.9.1"
   }
 }

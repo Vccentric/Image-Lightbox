@@ -1,10 +1,14 @@
-import React from 'react';
-import { hot } from 'react-hot-loader';
+import React from "react";
+import PropTypes from "prop-types";
 
 // row component
 function Row(props) {
-    const { cols } = props;
-    return <div className="row">{cols}</div>;
+  const { cols } = props;
+  return <div className="row">{cols}</div>;
 }
 
-export default hot(module)(Row);
+Row.propTypes = {
+  cols: PropTypes.array,
+};
+
+export default Row;
