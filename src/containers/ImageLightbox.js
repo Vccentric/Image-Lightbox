@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import Lightbox from "./Lightbox";
 
 const ImageLightbox = ({ data = {} }) => {
-  // setup lightbox state
+  // setup default lightbox state
   const [lightboxState, setLightboxState] = useState({
-    toggleOpen: true,
+    toggleOpen: false,
     currentIndex: 0,
   });
 
@@ -14,7 +14,12 @@ const ImageLightbox = ({ data = {} }) => {
     const key = index * Math.random();
     return (
       <li key={key}>
-        <img className="thumbnail" src={image.src} alt={image.alt} />
+        <img
+          className="thumbnail"
+          onClick={() => selectedImage(index, setLightboxState)}
+          src={image.src}
+          alt={image.alt}
+        />
       </li>
     );
   });
@@ -30,6 +35,13 @@ const ImageLightbox = ({ data = {} }) => {
       />
     </div>
   );
+};
+
+export const selectedImage = (index, setLightboxState) => {
+  setLightboxState({
+    toggleOpen: true,
+    currentIndex: index,
+  });
 };
 
 ImageLightbox.propTypes = {

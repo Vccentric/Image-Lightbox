@@ -53,20 +53,24 @@ export const close = (lightboxState, setLightboxState) => {
 
 export const prev = (lightboxState, setLightboxState) => {
   const { currentIndex } = lightboxState;
-  const index = currentIndex - 1 <= 0 ? 0 : currentIndex - 1;
-  setLightboxState({
-    ...lightboxState,
-    currentIndex: index,
-  });
+  const index = currentIndex - 1;
+  if (index >= 0) {
+    setLightboxState({
+      ...lightboxState,
+      currentIndex: index,
+    });
+  }
 };
 
 export const next = (max, lightboxState, setLightboxState) => {
   const { currentIndex } = lightboxState;
-  const index = currentIndex + 1 >= max ? max : currentIndex + 1;
-  setLightboxState({
-    ...lightboxState,
-    currentIndex: index,
-  });
+  const index = currentIndex + 1;
+  if (index <= max) {
+    setLightboxState({
+      ...lightboxState,
+      currentIndex: index,
+    });
+  }
 };
 
 Lightbox.propTypes = {
