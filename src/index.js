@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import ImageLightbox from "./containers/ImageLightbox";
 import "normalize.css";
 import "./styles/image-lightbox.scss";
@@ -13,11 +13,11 @@ const images = [
   { src: img2, alt: "img-2" },
   { src: img3, alt: "img-3" },
 ];
-const data = {
-  images: images,
-};
+const data = { images };
 
 // there are 2 ways of getting images (local / flickr)
 // pass the string 'flickr', into parameter: 'options', in order to flickr images
 // otherwise by default, it will get local images
-ReactDOM.render(<ImageLightbox data={data} />, document.getElementById("root"));
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<ImageLightbox data={data} />);
