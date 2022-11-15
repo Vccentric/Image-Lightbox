@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import Lightbox from "./Lightbox";
+import Lightbox from "../components/Lightbox";
 
 // initial state
 const initState = {
@@ -12,16 +12,51 @@ const initState = {
 const ImageLightbox = ({ data = {}, localState = initState }) => {
   // setup state
   const [lightboxState, setLightboxState] = useState(localState);
+  const { toggleOpen, currentIndex } = lightboxState;
+  const max = data.images?.length || 0;
+
+  // setup functions
+  const close = () => {
+    setLightboxState({
+      toggleOpen: false,
+      currentIndex,
+    });
+  };
+  const prev = () => {
+    let index = currentIndex - 1;
+    index = index < 0 ? max - 1 : index;
+    setLightboxState({
+      toggleOpen,
+      currentIndex: index,
+    });
+  };
+  const next = () => {
+    let index = currentIndex + 1;
+    index = index >= max ? 0 : index;
+    setLightboxState({
+      toggleOpen,
+      currentIndex: index,
+    });
+  };
 
   // setup elements
   const imageItems = data.images?.map((image, index) => {
     // setup variables
     const key = index * Math.random();
+
+    // setup functions
+    const selectedImage = () => {
+      setLightboxState({
+        toggleOpen: true,
+        currentIndex: index,
+      });
+    };
+
     return (
       <li key={key}>
         <img
           className="thumbnail"
-          onClick={() => selectedImage(index, setLightboxState)}
+          onClick={selectedImage}
           src={image.src}
           alt={image.alt}
         />
@@ -34,19 +69,14 @@ const ImageLightbox = ({ data = {}, localState = initState }) => {
       <h1 id="header">Image Lightbox</h1>
       <ul id="image-grid">{imageItems}</ul>
       <Lightbox
-        images={data.images}
-        lightboxState={lightboxState}
-        setLightboxState={setLightboxState}
+        toggleOpen={toggleOpen}
+        currentImage={data?.images?.[currentIndex]}
+        close={close}
+        prev={prev}
+        next={next}
       />
     </div>
   );
-};
-
-export const selectedImage = (index, setLightboxState) => {
-  setLightboxState({
-    toggleOpen: true,
-    currentIndex: index,
-  });
 };
 
 ImageLightbox.propTypes = {
