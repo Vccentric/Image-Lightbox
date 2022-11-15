@@ -15,9 +15,6 @@ const images = [
 ];
 const data = { images };
 
-// there are 2 ways of getting images (local / flickr)
-// pass the string 'flickr', into parameter: 'options', in order to flickr images
-// otherwise by default, it will get local images
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(<ImageLightbox data={data} />);

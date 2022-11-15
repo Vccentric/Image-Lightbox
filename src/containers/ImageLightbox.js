@@ -2,15 +2,20 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Lightbox from "./Lightbox";
 
-const ImageLightbox = ({ data = {} }) => {
-  // setup default lightbox state
-  const [lightboxState, setLightboxState] = useState({
-    toggleOpen: false,
-    currentIndex: 0,
-  });
+// initial state
+const initState = {
+  toggleOpen: false,
+  currentIndex: 0,
+};
 
-  // setup images for image grid
+// main container component
+const ImageLightbox = ({ data = {}, localState = initState }) => {
+  // setup state
+  const [lightboxState, setLightboxState] = useState(localState);
+
+  // setup elements
   const imageItems = data.images?.map((image, index) => {
+    // setup variables
     const key = index * Math.random();
     return (
       <li key={key}>
@@ -46,6 +51,7 @@ export const selectedImage = (index, setLightboxState) => {
 
 ImageLightbox.propTypes = {
   data: PropTypes.object,
+  localState: PropTypes.object,
 };
 
 export default ImageLightbox;
