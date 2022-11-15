@@ -13,7 +13,6 @@ module.exports = {
         test: /\.(js|jsx)$/i,
         exclude: /(node_modules|bower_components)/,
         loader: "babel-loader",
-        options: { presets: ["@babel/preset-env"] },
       },
       {
         test: /\.(css|sass|scss)$/i,
