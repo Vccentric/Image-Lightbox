@@ -66,7 +66,7 @@ const ImageLightbox = ({ data = {}, localState = initState }) => {
 
   return (
     <div id="image-lightbox">
-      <h1 id="header">Image Lightbox</h1>
+      <h1 className="header">Image Lightbox</h1>
       <ul id="image-grid">{imageItems}</ul>
       <Lightbox
         toggleOpen={toggleOpen}

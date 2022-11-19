@@ -9,22 +9,22 @@ const Lightbox = ({ toggleOpen, currentImage = {}, close, prev, next }) => {
       <div id="overlay"></div>
       <div id="modal">
         <button className="close" onClick={close}>
-          Close
+          X
         </button>
-        <div id="controls-container">
+        <div className="image-container">
+          <img
+            className="full-image"
+            src={currentImage.src}
+            alt={currentImage.alt}
+          />
+          <span className="caption">{currentImage.alt}</span>
+        </div>
+        <div className="controls-container">
           <button className="prev" onClick={prev}>
-            &lt;&lt;
+            &lt;&lt; PREV
           </button>
-          <div id="image-container">
-            <img
-              className="full-image"
-              src={currentImage.src}
-              alt={currentImage.alt}
-            />
-            <span className="caption">{currentImage.alt}</span>
-          </div>
           <button className="next" onClick={next}>
-            &gt;&gt;
+            NEXT &gt;&gt;
           </button>
         </div>
       </div>

@@ -1,8 +1,91 @@
 #image-lightbox {
-  #lightbox {
+  font-size: 16px;
+  z-index: 1;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    text-align: center;
+  }
+  button {
+    all: unset;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.4rem;
+  }
+}
+
+#image-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  li {
+    flex-basis: 20%;
+  }
+  .thumbnail {
+    cursor: pointer;
+    max-width: 100%;
+  }
+  .thumbnail:hover {
+    box-shadow: 5px 5px 10px gray;
+  }
+}
+
+#lightbox {
+  color: white;
+  #overlay {
+    background-color: black;
+    bottom: 0;
     display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.7;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
   }
-  #lightbox.close {
-    display: none;
+  #modal {
+    bottom: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 110;
+    .close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 3rem;
+      img.full-image {
+        border: 4px solid white;
+        margin: 0.5rem;
+      }
+      .caption {
+        margin: 1rem 0;
+        text-align: center;
+      }
+    }
+    .controls-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      button {
+        margin: 0.5rem;
+      }
+    }
   }
+}
+#lightbox.close {
+  display: none;
 }
