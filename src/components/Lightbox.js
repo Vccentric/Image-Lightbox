@@ -12,11 +12,14 @@ const Lightbox = ({ toggleOpen, currentImage = {}, close, prev, next }) => {
           X
         </button>
         <div className="image-container">
-          <img
-            className="full-image"
-            src={currentImage.src}
-            alt={currentImage.alt}
-          />
+          <div className="full-image">
+            <img
+              className="selected-image"
+              src={currentImage.src}
+              alt={currentImage.alt}
+              onClick={close}
+            />
+          </div>
           <span className="caption">{currentImage.alt}</span>
         </div>
         <div className="controls-container">
