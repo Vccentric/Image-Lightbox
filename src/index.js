@@ -9,9 +9,9 @@ import img3 from "../public/images/img_snow_wide.jpg";
 
 // local sample images
 const images = [
-  { src: img1, alt: "img-1" },
-  { src: img2, alt: "img-2" },
-  { src: img3, alt: "img-3" },
+  { src: img1, alt: "Spring Mountains" },
+  { src: img2, alt: "Fall Mountains" },
+  { src: img3, alt: "Winter Mountains" },
 ];
 const data = { images };
 
