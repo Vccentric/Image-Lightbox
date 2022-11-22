@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly - snapshot 1`] = `
+<div
+  className=""
+  id="lightbox"
+>
+  <div
+    id="overlay"
+  />
+  <div
+    id="modal"
+  >
+    <button
+      className="close"
+      onClick={[MockFunction]}
+    >
+      X
+    </button>
+    <div
+      className="image-container"
+    >
+      <div
+        className="full-image"
+      >
+        <img
+          alt="Spring Mountains"
+          className="selected-image"
+          onClick={[MockFunction]}
+          src=""
+        />
+      </div>
+      <span
+        className="caption"
+      >
+        Spring Mountains
+      </span>
+    </div>
+    <div
+      className="controls-container"
+    >
+      <button
+        className="prev"
+        onClick={[MockFunction]}
+      >
+        &lt;&lt; PREV
+      </button>
+      <button
+        className="next"
+        onClick={[MockFunction]}
+      >
+        NEXT &gt;&gt;
+      </button>
+    </div>
+  </div>
+</div>
+`;
