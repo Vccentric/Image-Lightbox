@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly - snapshot 1`] = `
+<div
+  id="image-lightbox"
+>
+  <h1
+    className="header"
+  >
+    Image Lightbox
+  </h1>
+  <ul
+    id="image-grid"
+  >
+    <li>
+      <img
+        alt="Spring Mountains"
+        className="thumbnail"
+        onClick={[Function]}
+        src=""
+      />
+    </li>
+    <li>
+      <img
+        alt="Fall Mountains"
+        className="thumbnail"
+        onClick={[Function]}
+        src=""
+      />
+    </li>
+    <li>
+      <img
+        alt="Winter Mountains"
+        className="thumbnail"
+        onClick={[Function]}
+        src=""
+      />
+    </li>
+  </ul>
+  <div
+    className="close"
+    id="lightbox"
+  >
+    <div
+      id="overlay"
+    />
+    <div
+      id="modal"
+    >
+      <button
+        className="close"
+        onClick={[Function]}
+      >
+        X
+      </button>
+      <div
+        className="image-container"
+      >
+        <div
+          className="full-image"
+        >
+          <img
+            alt="Spring Mountains"
+            className="selected-image"
+            onClick={[Function]}
+            src=""
+          />
+        </div>
+        <span
+          className="caption"
+        >
+          Spring Mountains
+        </span>
+      </div>
+      <div
+        className="controls-container"
+      >
+        <button
+          className="prev"
+          onClick={[Function]}
+        >
+          &lt;&lt; PREV
+        </button>
+        <button
+          className="next"
+          onClick={[Function]}
+        >
+          NEXT &gt;&gt;
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
