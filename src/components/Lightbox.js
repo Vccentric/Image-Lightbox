@@ -15,8 +15,8 @@ const Lightbox = ({ toggleOpen, currentImage = {}, close, prev, next }) => {
           <div className="full-image">
             <img
               className="selected-image"
-              src={currentImage.src}
-              alt={currentImage.alt}
+              src={currentImage.src || ""}
+              alt={currentImage.alt || ""}
               onClick={close}
             />
           </div>

@@ -53,3 +53,12 @@ test("renders lightbox with different image than default", () => {
   );
   expect(screen.getByText("Fall Mountains")).toBeInTheDocument();
 });
+
+test("renders lightbox with empty image when not passing currentImage param", () => {
+  const { container } = render(
+    <Lighbox toggleOpen={toggleOpen} close={close} prev={prev} next={next} />
+  );
+  const element = container.querySelector("img.selected-image");
+  expect(element.src).toEqual("http://localhost/");
+  expect(element.alt).toEqual("");
+});
